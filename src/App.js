@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+import React from 'react';
+import 'antd/dist/antd.css';
 import './App.css';
+import {Button} from 'antd';
+
+import TabUi from './components/TabUi';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className='App'>
+      <header className='App-header'>
+       
+        <div className='space'> <TabUi placeholder="tab1"/> </div>
+       <div className='space'>  <TabUi placeholder="tab2"/> </div>
+       <div className='space'>  <TabUi placeholder="tab3"/> </div>
+       
+      <Button type="primary" className='btn'>
+            <span>Done</span>
+      </Button>  
       </header>
+
     </div>
+
   );
 }
 
