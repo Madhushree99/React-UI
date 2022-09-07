@@ -1,52 +1,51 @@
 import React, { useState,useEffect} from 'react';
 import 'antd/dist/antd.css';
 import { PlusOutlined } from '@ant-design/icons';
-import { Divider, Input, Select, Space, Button, Form } from 'antd';
+import { Divider, Input,Space, Button,Select, Form } from 'antd';
 
 const { TextArea } = Input;
 
 
-const TabUi = (props) => {
+const Tab2 = (props) => {
   
 
-  const [controlsList, setcontrolsList] = useState([
+  const [Tab2, setTab2] = useState([
       {firstname:'', lastname:'', address:'', contact:''},
   ]);
  
+
   const [open, setopen] = useState(false);
   
-  const LocalKey="controls";
+  const LocalKey="Tab2-data";
  
   const handlecontrolRemove = (index) => {
-    const list = [...controlsList];
+    const list = [...Tab2];
     list.splice(index, 1);
-    setcontrolsList(list);
+    setTab2(list);
   }; 
 
 
   const handlecontrolAdd = () => {
-    setcontrolsList([...controlsList, {firstname:'',lastname:'',address:'',contact:''}]);
+    setTab2([...Tab2, {firstname:'',lastname:'',address:'',contact:''}]);
     
   };
 
   const handleChange = (index,e) => {
-      // console.log(index,e.target.value)
-       const inputdata=[...controlsList]
+       const inputdata=[...Tab2]
        inputdata[index][e.target.name]=e.target.value;
-       setcontrolsList(inputdata);
+       setTab2(inputdata);
   };
 
   
   const handleSubmit = (e) => {
       e.preventDefault();
-      console.log("controls",controlsList);
-    setopen(false)
+      console.log("Tab2data",Tab2);
+      const inputdata=[...Tab2]
+       setTab2(inputdata);
+       localStorage.setItem(LocalKey, JSON.stringify(Tab2))
+        setopen(false)
+        window.location.reload(false);
   };
-
-  useEffect(() => {
-    localStorage.setItem(LocalKey, JSON.stringify(controlsList))
-  }, [controlsList]);
-
 
 
   return (
@@ -58,17 +57,18 @@ const TabUi = (props) => {
           }} >
 
          <div>
-           <form onSubmit={handleSubmit}>
-  
-           <Select 
-             style={{ width: 500}}
+           <Form onFinish={handleSubmit}>
+       
+        <Select 
+             style={{ width: 600}}
              placeholder={props.placeholder}
              open={open}
              onDropdownVisibleChange={(visible) => setopen(visible)}
              dropdownRender={() => (
             <>
-
-                {controlsList.map((controlsLst,index) => (
+          
+          
+                {Tab2.map((controlsLst,index) => (
               <>
                  
         <div key={index}>
@@ -133,7 +133,7 @@ const TabUi = (props) => {
             <TextArea
               name="address"
               id="address"
-             rows={4} 
+             rows={3} 
             placeholder="Enter Your Full Address" 
             maxLength={50}
             value={controlsLst.address}
@@ -148,7 +148,7 @@ const TabUi = (props) => {
 
  
  
-                {controlsList.length !== 1 && (
+                {Tab2.length !== 1 && (
                          <Button 
                            type="danger"
                            onClick={() => handlecontrolRemove(index)}
@@ -170,13 +170,12 @@ const TabUi = (props) => {
                   padding: '0 8px 4px',
                      }}>
 
-                       {controlsList.length < 4 && (
+                       {Tab2.length < 4 && (
 
                        <Button
                          type="primary"
                          onClick={handlecontrolAdd}
                          className="btn2"
-                        //  disabled={controlsList.length >= 4}
                        >
                          <span>Add more <PlusOutlined /></span>
                        </Button>
@@ -189,13 +188,12 @@ const TabUi = (props) => {
                      </Space>
                      
                      </>
-               
-        </>
+                     </>
        
-      )}    
-    >
-    </Select>
-    </form> 
+       )}    
+     >
+     </Select>
+    </Form> 
     </div>
 
 </Space>
@@ -203,5 +201,5 @@ const TabUi = (props) => {
   );
 };
 
-export default TabUi; 
+export default Tab2; 
 

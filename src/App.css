@@ -9,10 +9,18 @@
 
 .App {
   text-align: center;
-  width: 70vh;
+  width: 100vh;
   margin: 1rem auto;
   display: flex;
-  
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
+ 
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgb(11 112 231 / 5%) 0px 4px 10px;
+  border-color: rgb(231, 235, 241);
+  /* border-color: black */
   /* justify-content: space-between; */
 }
 
@@ -24,8 +32,10 @@
  align-self: flex-end;
 }
 
-.btn2 {
-  align-items: flex-end;
+.table {
+  text-align: center;
+  width: 100%;
+  margin: 1rem auto;
  }
 
 /* @media (prefers-reduced-motion: no-preference) {
@@ -47,7 +57,7 @@
   /* margin-top: 10%;
   margin-bottom: 10%; */
   /* margin: 1rem auto; */
-  padding: 25px 25px 25px 25px;
+  padding: 5px 5px 25px 5px;
   
   /* width:100%; */
 }
@@ -74,6 +84,28 @@ input {
 
 input:focus {
   border: 1px solid rgb(0, 208, 255);
+}
+
+body {
+  background: #fbfbfb;
+  
+}
+
+.wrapper {
+  max-width: 400px;
+  margin: 50px auto 0 auto;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgb(11 112 231 / 5%) 0px 4px 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(231, 235, 241);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.wrapper section {
+  padding: 20px 0;
 }
 
 
