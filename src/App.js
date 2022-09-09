@@ -8,6 +8,7 @@ import Tab1 from './components/Tab1';
 import Tab2 from './components/Tab2';
 import Tab3 from './components/Tab3';
 
+
  
 
 function App() {
@@ -45,6 +46,8 @@ function App() {
     <div className='App'>
       <header className='App-header'>
 
+          {/* <div className='space'>  <TabUi placeholder="Sample Tab"/> </div> */}
+
             <div className='space'> <Tab1 placeholder="Tab1" /> </div>
             <div className='space'> <Tab2 placeholder="Tab2" /> </div>
 <           div className='space'> <Tab3 placeholder="Tab3" /> </div>
@@ -61,6 +64,7 @@ function App() {
 
    
       <div className='table'>
+        
     <div>
 
       <TableData h1="Tab 1 Data"

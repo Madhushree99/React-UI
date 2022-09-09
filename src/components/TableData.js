@@ -1,6 +1,6 @@
-import React, { useState,useEffect} from 'react';
+import React from 'react';
 import 'antd/dist/antd.css';
-import { Divider,Space, Table} from 'antd';
+import { Divider,Table} from 'antd';
 
 
 

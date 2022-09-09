@@ -1,4 +1,4 @@
-import React, { useState,useEffect} from 'react';
+import React, { useState} from 'react';
 import 'antd/dist/antd.css';
 import { PlusOutlined } from '@ant-design/icons';
 import { Divider, Input,Space, Button,Select, Form } from 'antd';
@@ -16,7 +16,7 @@ const Tab1 = (props) => {
 
   const [open, setopen] = useState(false);
   
-  const LocalKey="Tab1-data";
+  // const LocalKey="Tab1-data";
  
   const handlecontrolRemove = (index) => {
     const list = [...Tab1data];
@@ -43,7 +43,7 @@ const Tab1 = (props) => {
       console.log("Tab1data",Tab1data);
       const inputdata=[...Tab1data]
       setTab1data(inputdata);
-      localStorage.setItem(LocalKey, JSON.stringify(Tab1data))
+      localStorage.setItem("Tab1-data", JSON.stringify(Tab1data))
       setopen(false)
       window.location.reload(false);
   };
@@ -126,6 +126,7 @@ const Tab1 = (props) => {
                 {
                   required: true,
                   message: 'Contact info required',
+                  pattern: '("([987][0-9]{10}*)")',
                 },
               ]}
              />   
