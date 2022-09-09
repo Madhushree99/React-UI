@@ -30,11 +30,13 @@ function App() {
     if(retrivedlist1)setdata1(retrivedlist1)
   },[])
 
+
   useEffect(()=>{
     const retrivedlist2=JSON.parse(localStorage.getItem('Tab2-data'))
     if(retrivedlist2)setdata2(retrivedlist2)
   },[])
 
+  
   useEffect(()=>{
     const retrivedlist3=JSON.parse(localStorage.getItem('Tab3-data'))
     if(retrivedlist3)setdata3(retrivedlist3)
@@ -45,8 +47,6 @@ function App() {
     <>
     <div className='App'>
       <header className='App-header'>
-
-          {/* <div className='space'>  <TabUi placeholder="Sample Tab"/> </div> */}
 
             <div className='space'> <Tab1 placeholder="Tab1" /> </div>
             <div className='space'> <Tab2 placeholder="Tab2" /> </div>
@@ -64,7 +64,7 @@ function App() {
 
    
       <div className='table'>
-        
+
     <div>
 
       <TableData h1="Tab 1 Data"

@@ -16,7 +16,6 @@ const Tab1 = (props) => {
 
   const [open, setopen] = useState(false);
   
-  // const LocalKey="Tab1-data";
  
   const handlecontrolRemove = (index) => {
     const list = [...Tab1data];
